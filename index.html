@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>My daily planner</title>
+</head>
+
+<body>
+    <div class="heading">
+        <div class="headingText">My awesome day</div>
+        <div class="date"></div>
+    </div>
+
+    <div class="content"></div>
+
+    <div class="addButton">
+        <i class="material-icons">add</i>
+    </div>
+    <div class="modalContainer">
+        <div class="modalAddTask">
+            <div class="inputs">
+                <input class="modalInput" type="text" placeholder="Title" name="title">
+                <input class="modalInput details" type="text" placeholder="Details" name="details">
+                <div class="dateInput modalInput">
+                    <input class="modalInput" type="date" placeholder="DueDate" name="dueDate">
+                </div>
+            </div>
+            <button class="addTask">Add Task</button>
+            <button class="cancelAddTask">Cancel</button>
+        </div>
+    </div>
+
+
+
+</body>
+<script src="app.js"></script>
+
+</html>

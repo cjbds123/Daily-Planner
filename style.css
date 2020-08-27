@@ -1,0 +1,231 @@
+:root {
+    --back-color: #EFF1F3;
+    --text-color: #272727;
+    --box-color: #FED766;
+    --color4: #009FB7;
+    --color5: #696773;
+}
+
+body {
+    background-color: var(--back-color);
+    display: inline;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.heading {
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 1vh;
+    background-color: var(--color5);
+    text-align: center;
+    display: block;
+}
+
+.headingText {
+    font-size: 5vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--box-color);
+    margin-top: 0;
+}
+
+.date {
+    color: var(--back-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vh;
+    margin: 1em;
+}
+
+.content {
+    position: absolute;
+    top: 10em;
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+
+.element {
+    position: relative;
+    margin: 1em auto;
+    width: 50%;
+    background-color: var(--box-color);
+    /* text-align: center; */
+    border-radius: 25px;
+    min-height: 4em;
+    animation: fadeIn 1s;
+    transition: 0.5s
+}
+
+.element.remove {
+    transition: 0.5s;
+    transform: translateX(+200%);
+}
+
+.element>.elementCompleted {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.element>.elementCompleted>.material-icons {
+    position: relative;
+    background-color: var(--color4);
+    border-radius: 25px;
+    padding: 5px;
+    margin: 10px 10px;
+    cursor: pointer
+}
+
+.elementContent {
+    display: inline-block;
+    padding: 10px 10px 25px 10px;
+    font-size: 1.3vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+}
+
+.elementContent>.elementHeading {
+    position: relative;
+    font-size: 2.5vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+}
+
+.elementContent>.elementDueDate {
+    position: absolute;
+    right: 0;
+    margin: 0 20px 5px 0;
+    bottom: 0;
+}
+
+.elementContent>.createdDate {
+    position: absolute;
+    right: 0;
+    margin: 0 20px 5px 0;
+}
+
+.addButton {
+    position: fixed;
+    background-color: var(--color4);
+    border-radius: 50%;
+    border-color: #272727;
+    border-style: solid;
+    border-width: thin;
+    height: 25px;
+    width: 25px;
+    padding: 10px;
+    margin: 20px 20px;
+    right: 2em;
+    bottom: 2em;
+}
+
+.addButton:hover {
+    cursor: pointer;
+}
+
+.modalContainer {
+    display: grid;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    animation: fadeIn 0.1s;
+    transition: 0.2s;
+}
+
+.modalContainer.open {
+    opacity: 1;
+    pointer-events: all;
+    transition: 0.2s;
+}
+
+.modalAddTask {
+    position: relative;
+    background-color: var(--color4);
+    width: 40vw;
+    min-width: 300px;
+    min-height: 30%;
+    margin: auto;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.modalInput {
+    position: relative;
+    vertical-align: middle;
+    display: grid;
+    width: 70%;
+    margin: 10px auto;
+    border-style: none;
+    border-radius: 5px;
+    text-align: center;
+    background-color: var(--color5);
+    color: var(--back-color);
+    font-size: medium;
+    font-weight: normal;
+    padding: 6px;
+}
+
+.modalInput[type="date"] {
+    color: var(--box-color);
+    vertical-align: middle;
+    font-size: large;
+    display: inline-block;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.modalInput[type="date"]:focus {
+    border-style: none;
+}
+
+.modalInput.details {
+    min-height: 3em;
+}
+
+.modalInput::placeholder {
+    color: var(--box-color)
+}
+
+.modalAddTask>.inputs {
+    position: absolute;
+    width: 100%;
+    top: 10%;
+}
+
+.modalAddTask>button {
+    position: absolute;
+    margin: 10px;
+    bottom: 0;
+    background-color: var(--color4);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.modalAddTask>button:hover {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+.modalAddTask>.addTask {
+    right: 10px;
+}
+
+.modalAddTask>.cancelAddTask {
+    left: 10px;
+}
